@@ -21,7 +21,7 @@ class AllGuestsFragment : Fragment() {
     private lateinit var viewModel: GuestsViewModel
     private val adapter = GuestsAdapter()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, b: Bundle? ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, b: Bundle?): View {
         viewModel = ViewModelProvider(this).get(GuestsViewModel::class.java)
         _binding = FragmentAllGuestsBinding.inflate(inflater, container, false)
 
@@ -33,7 +33,7 @@ class AllGuestsFragment : Fragment() {
         binding.recyclerGuests.adapter = adapter
 
         //implementando classe abstrata para clicar no item e fazer alterações
-        val listener = object : OnGuestListener{
+        val listener = object : OnGuestListener {
             override fun onClick(id: Int) {
 
                 val intent = Intent(context, GuestFormActivity::class.java)
